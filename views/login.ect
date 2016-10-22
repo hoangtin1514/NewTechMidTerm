@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style/login.css">
+
+	<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="script/login.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7 col-xs-10 col-sm-8  col-md-offset-3 col-sm-offset-2 col-xs-offset-1" id="login-area">
+				<div class="row" >
+					<div>
+						<h3 id="header"> Sign In </h3>
+						<hr>
+					</div>
+					<div class="col-md-6 col-xs-12 col-sm-12" id="col1">
+						<h4>Use other accounts</h4>
+						<div class="col-xs-12 col-md-11">
+							<p>
+								You can also sign in using your Facebook Account or Google Account
+							</p>
+						</div >
+
+						<div class="col-xs-12 col-md-12 button-area">
+								<a href="/auth/facebook" class="btn btn-primary btn-block btn-lg btn-fontsize">Login with Facebook </a>
+						</div>
+
+						<div class="col-xs-12 col-md-12 button-area">
+							<a href="/auth/google" class="btn btn-danger btn-block btn-lg btn-fontsize">Login with Google </a>
+						</div>
+
+					</div>
+
+					<div class="col-md-6 col-xs-11 col-sm-12">
+						<div class="form-heading">
+							<h4 class="header">Using your account</h4>
+						</div>
+						<div class="form-body">
+							<form role="form" method="post">
+								<div class="form-group">
+									<input type="text" name="email" id="email" class="form-control input-lg" placeholder="Email Address" required>
+								</div>
+								<div class="form-group">
+									<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" required>
+								</div>
+
+								<div class="form-footer">
+								<div id="error"><%- @error %></div>
+									<input type="submit" value="Sign in" class="btn btn-lg btn-info btn-block">
+									<p align="center">
+										<a href="/register">Don't have an account? Register now</a>
+									</p>
+
+								</div>
+							</form>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	</html>

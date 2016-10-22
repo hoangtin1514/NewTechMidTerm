@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<% include '_title' %>
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style/register.css">
+
+	<script type="text/javascript" src="jquery/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="script/register.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div id="register-form">
+			<form role="form" method="post">
+				<h2>Please Sign Up <small>It's free and always will be.</small></h2>
+				<hr class="colorgraph">
+				<div id="error"></div>
+				<div class="form-group">
+					<input type="text" name="name" id="name" class="form-control input-lg" placeholder="Name" tabindex="1" required>
+				</div>
+				<div class="form-group">
+					<input type="email" name="email" id="email" class="form-control input-lg" placeholder="Email Address" tabindex="2" required>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="password" name="password" id="password" class="form-control input-lg" placeholder="Password" tabindex="3" required>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="form-group">
+							<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="4" required>
+						</div>
+					</div>
+				</div>
+				<hr class="colorgraph">
+				<div class="row">
+					<div class="col-md-6 col-xs-6">
+						<input type="submit" value="Register" class="btn btn-primary btn-block btn-lg" tabindex="7">
+					</div>
+					<div class="col-md-6 col-xs-6"><a href="login" class="btn btn-success btn-block btn-lg">Login</a></div>
+				</div>
+			</form>
+		</div>
+		<div style="clear: both"></div? </div>
+</body>
+
+</html>
