@@ -1,0 +1,73 @@
+body {
+    background: url("../images/login-background.jpg");
+}
+
+.colorgraph {
+    height: 5px;
+    border-top: 0;
+    background: #c4e17f;
+    border-radius: 5px;
+    background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+    background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+}
+
+#error {
+    padding: 5px;
+    color: red;
+}
+
+#register-form {
+    background-color: white;
+    display: inline-block;
+    width: 40%;
+}
+
+.wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #register-form {
+        padding: 20px;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 5%;
+    }
+    .h2,
+    h2 {
+        font-size: 22px;
+    }
+    .input-lg {
+        font-size: 14px;
+    }
+    .btn-group-lg>.btn,
+    .btn-lg {
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+@media (min-width: 768px) {   
+    #register-form {
+        padding: 40px;
+        width: 46%;
+        margin-left: 32%;
+        margin-right: 32%;
+        margin-top: 5%;
+    }
+    .h2,
+    h2 {
+        font-size: 30px;
+    }
+    .btn-lg {
+        font-size: 16px;
+    }
+    .btn-group-lg>.btn,
+    .btn-lg {
+        font-size: 20px;
+    }
+}

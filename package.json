@@ -1,0 +1,39 @@
+{
+  "name": "VaccineProject_582_595_596_600",
+  "version": "0.0.0",
+  "description": "**Vaccine Reminder** là một đồ án của môn UDPT.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "postinstall": "bower install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dtien147/VaccineProject_582_595_596_600.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/dtien147/VaccineProject_582_595_596_600/issues"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "bower": "~1.7.9",
+    "cookie-parser": "^1.4.3",
+    "cron": "^1.1.0",
+    "ect": "~0.5.9",
+    "express": "~4.13.4",
+    "express-session": "1.4.0",
+    "jshare": "0.0.9",
+    "moment": "^2.13.0",
+    "mongodb": "~1.4.0",
+    "monk": "~1.0.1",
+    "nodemailer": "^2.4.2",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-google": "^0.3.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-local": "^1.0.0"
+  }
+}

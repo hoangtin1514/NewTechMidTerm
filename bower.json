@@ -1,0 +1,26 @@
+{
+  "name": "VaccineProject_582_595_596_600",
+  "description": "**Vaccine Reminder** là một đồ án của môn UDPT.",
+  "main": "server.js",
+  "authors": [
+    "Duong Tien <dtien147@gmail.com>"
+  ],
+  "license": "BSD-2-Clause",
+  "homepage": "https://github.com/dtien147/VaccineProject_582_595_596_600",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "jquery": "^2.2.4",
+    "jquery-ui": "^1.11.4",
+    "angular": "angularjs#^1.5.7",
+    "bootstrap-toggle": "^2.2.2",
+    "moment": "^2.13.0",
+    "fullcalendar": "^2.8.0"
+  }
+}
