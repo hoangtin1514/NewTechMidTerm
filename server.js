@@ -47,6 +47,7 @@ var db = monk('admin:admin@ds063546.mlab.com:63546/new_tech');
 app.use('/', require('./routes'));
 app.use('/', require('./routes/register'));
 app.use('/', require('./routes/login'));
+app.use('/', require('./routes/QuocGia'));
 
 //===============PORT=================
 app.listen(process.env.PORT || 3000, function() {
