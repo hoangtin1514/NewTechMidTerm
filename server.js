@@ -50,7 +50,7 @@ app.use('/', require('./routes/login'));
 app.use('/', require('./routes/San_Bay'));
 app.use('/', require('./routes/Chuyen_Bay'));
 app.use('/', require('./routes/QuocGia'));
-
+app.use('/', require('./routes/Tinh'));
 
 //===============PORT=================
 app.listen(process.env.PORT || 3000, function() {

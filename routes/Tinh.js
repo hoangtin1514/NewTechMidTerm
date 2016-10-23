@@ -2,15 +2,15 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
-router.get('/api/v1/Quoc_Gia', function(req, res) {
-    var QG = req.db.get('QuocGia');
-        QG.find({"ChauLuc.MaCL" : req.param('MaQG')}, function (err, result){    
+router.get('/api/v1/Tinh', function(req, res) {
+    var T = req.db.get('Tinh');
+        T.find({"MaQG" : req.param('MaTinh')}, function (err, result){    
             if(err){
                 console.log(err);
-                res.send(500, 'something went wrong');
+                res.send(500, 'something went wrong');               
             } else {
                 console.log(result);        
-                res.status(200).send(result);
+                res.send(200, result);
             }
             
         });
