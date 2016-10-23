@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dtien147/VaccineProject_582_595_596_600.git"
+    "url": "https://github.com/hoangtin1514/NewTechMidTerm"
   },
   "author": "",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/dtien147/VaccineProject_582_595_596_600/issues"
+    "url": "https://github.com/hoangtin1514/NewTechMidTerm/issues"
   },
   "dependencies": {
     "body-parser": "~1.15.1",

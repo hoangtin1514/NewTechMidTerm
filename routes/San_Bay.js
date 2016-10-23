@@ -9,7 +9,7 @@ router.get('/api/v1/San_Bay', function(req, res) {
   },function(err, result){
       if (err){
         console.log(err);
-        res.send(500, 'something went wrong');
+        res.status(500).send('something went wrong');
       }
       else {
         console.log(result);
