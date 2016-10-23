@@ -47,8 +47,15 @@ var db = monk('admin:admin@ds063546.mlab.com:63546/new_tech');
 app.use('/', require('./routes'));
 app.use('/', require('./routes/register'));
 app.use('/', require('./routes/login'));
+<<<<<<< HEAD
 app.use('/', require('./routes/San_Bay'));
+<<<<<<< HEAD
 app.use('/', require('./routes/Chuyen_Bay'));
+=======
+=======
+app.use('/', require('./routes/QuocGia'));
+>>>>>>> API_Get_Quoc_Gia
+>>>>>>> refs/remotes/origin/master
 
 //===============PORT=================
 app.listen(process.env.PORT || 3000, function() {
