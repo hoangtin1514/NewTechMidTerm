@@ -1,0 +1,305 @@
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<!--meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags >
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<link rel="icon" href="../../favicon.ico"-->
+
+		<title>Vé Máy Bay</title>
+
+		<!-- Bootstrap core CSS -->
+		<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+		<link href="navbar-fixed-top.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="public/stylesheets/style.css">
+		<link href="public/css/bootstrap.min.css" rel="stylesheet">
+		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+		
+
+		<!-- add calendar-->
+		<link rel="stylesheet" type="text/css" href="public/stylesheets/calendarview.css">
+		<style>
+			body {
+				font-family: Trebuchet MS;
+			}
+			div.calendar {
+				max-width: 240px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			div.calendar table {
+				width: 100%;
+			}
+			div.dateField {
+				width: 140px;
+				padding: 6px;
+				-webkit-border-radius: 6px;
+				-moz-border-radius: 6px;
+				color: #555;
+				background-color: white;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+			}
+			div#popupDateField:hover {
+				background-color: #cde;
+				cursor: pointer;
+			}
+		</style>
+
+		<script src="public\javascripts\prototype.js"></script>
+		<script src="public\javascripts\calendarview.js"></script>
+
+		<script>
+			function setupCalendars() {
+        // Embedded Calendar
+        Calendar.setup(
+        {
+        	dateField: 'embeddedDateField',
+        	parentElement: 'embeddedCalendar'
+        }
+        )
+
+        // Popup Calendar
+        Calendar.setup(
+        {
+        	dateField: 'popupDateField',
+        	triggerElement: 'popupDateField'
+        }
+        )
+    }
+
+    Event.observe(window, 'load', function() { setupCalendars() })
+</script><!--// add calendar-->
+</head>
+
+<body>
+	<legend>
+		<div class="container">
+			<div class="row">
+
+				<!--thanh menu-->
+				<div class="col-md-12">
+					<nav class="navbar navbar-defauldt" style="background: #b30000; height: 15px;" role="navigation">
+						<div class="container-fluid">
+							<ul class="nav navbar-nav nav-left">
+								<ul class="nav navbar-nav">
+									<li><a href="#" style="font-size: 15px; color: #FFFFFF">Trang chủ</a></li>
+									<li><a href="#" style="font-size: 15px; color: #FFFFFF">Vé giá rẻ</a></li>
+									<li><a href="#" style="font-size: 15px; color: #FFFFFF">Lịch sử mua vé</a></li>
+									<li><a href="#" style="font-size: 15px; color: #FFFFFF">Thông tin tài khoản</a></li>
+									<li><a href="#" style="font-size: 15px; color: #FFFFFF">Cài đặt</a></li>
+								</ul>
+							</ul>
+						</div>
+
+					</nav>
+				</div><!--//thanh menu-->
+
+				<div class="col-md-12">
+
+					<div class="panel" style="background:#ffa64d">
+						<div class="panel-heading" style="height:130px"><h3 style="font-size:30px;margin-top: 0px"><strong><h1>Thông tin khách hàng</h1></strong></h3>
+							<h3>Các trường thông tin có dấu * là bắt buộc</h3>
+						</div>
+						<div class="panel-body" style="background:#ffffcc">
+							<form id="timve" name="timve" method="get" action="#">
+								<table align="center" width="100%">
+									<tbody>
+
+										<tr>
+											<td align="left" nowrap="nowrap" style="padding-bottom: 10px">
+												Quý danh*:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<select name="treem" id="frm_timve_treem" style="width:200px;">
+													<option value="">a</option>
+													<option value="">b</option>
+													<option value="">c</option>
+													<option value="">d</option>
+												</select>
+											</td>
+										</tr>
+
+										<tr>
+
+											<td align="left" nowrap="nowrap" style="padding-bottom: 10px">
+												Họ(ví dụ: Nguyễn)*:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<input name="diemdi" type="text" id="frm_timve_diemdi" style="width:200px;" value="">
+
+											</td>
+
+											<td class="padding_" align="left" nowrap="nowrap">
+												Tên đệm và Tên(ví dụ: Hoàng Tín)*:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<input name="diemden" type="text" id="frm_timve_diemden" style="width:200px;" value="">
+
+											</td>
+										</tr>
+
+										<tr>
+
+											<td align="left" nowrap="nowrap" style="padding-bottom: 10px">
+												Địa chỉ*:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<input name="diemdi" type="text" id="frm_timve_diemdi" style="width:200px;" value="">
+
+											</td>
+
+											<td class="padding_" align="left" nowrap="nowrap">
+												Thành phố*:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<input name="diemden" type="text" id="frm_timve_diemden" style="width:200px;" value="">
+
+											</td>
+										</tr>
+
+										<tr>
+											<td align="left" nowrap="nowrap" style="padding-bottom: 10px">
+												Quốc gia*:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<select name="treem" id="frm_timve_treem" style="width:200px;">
+													<option value="">Việt Nam</option>
+													<option value="">Lào</option>
+													<option value="">CamPuChia</option>
+													<option value="">Thái Lan</option>
+												</select>
+											</td>
+
+											<td align="left" nowrap="nowrap" style="padding-bottom: 10px">
+												Tỉnh/Tiểu ban*:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<select name="treem" id="frm_timve_treem" style="width:200px;">
+													<option value="">HCM</option>
+													<option value="">Vũng Tàu</option>
+													<option value="">Bình Thuận</option>
+												</select>
+											</td>
+										</tr>
+
+										<tr>
+
+											<td class="padding_" align="left" nowrap="nowrap">
+												Email:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<input name="diemden" type="text" id="frm_timve_diemden" style="width:200px;" value="">
+
+											</td>
+
+											<td class="padding_" align="left" nowrap="nowrap">
+												Ngày sinh:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<input name="ngaydi" type="date" id="frm_timve_ngaydi" style="width:200px;" value="">
+
+											</td>
+										</tr>
+
+										<tr>
+
+											<td class="padding_" align="left" nowrap="nowrap">
+												Điện thoại di dộng*:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<input name="diemden" type="text" id="frm_timve_diemden" style="width:200px;" value="">
+
+											</td>
+
+											<td class="padding_" align="left" nowrap="nowrap">
+												Số điện thoại:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<input name="ngaydi" type="date" id="frm_timve_ngaydi" style="width:200px;" value="">
+
+											</td>
+										</tr>
+										<tr>
+
+											<td class="padding_" align="left" nowrap="nowrap">
+												Số hộ khẩu:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<input name="diemden" type="text" id="frm_timve_diemden" style="width:200px;" value="">
+
+											</td>
+
+											<td class="padding_" align="left" nowrap="nowrap">
+												Ngày hết hạn hộ khẩu:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<input name="ngaydi" type="date" id="frm_timve_ngaydi" style="width:200px;" value="">
+
+											</td>
+										</tr>
+										<tr>
+											<td align="left" nowrap="nowrap" style="padding-bottom: 10px">
+												Hộ chiếu nước:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<select name="treem" id="frm_timve_treem" style="width:200px;">
+													<option value="">Việt Nam</option>
+													<option value="">Lào</option>
+													<option value="">CamPuChia</option>
+													<option value="">Thái Lan</option>
+												</select>
+											</td>
+
+											<td align="left" nowrap="nowrap" style="padding-bottom: 10px">
+												Quốc tịch:
+											</td>
+											<td class="padding_" align="left" nowrap="nowrap">
+												<select name="treem" id="frm_timve_treem" style="width:200px;">
+													<option value="">Việt Nam</option>
+													<option value="">Lào</option>
+													<option value="">CamPuChia</option>
+													<option value="">Thái Lan</option>
+												</select>
+											</td>
+										</tr>
+										<tr>
+											<td class="padding_" colspan="8" align="right" nowrap="nowrap">
+												<button class="btn btn-primary" type="submit" class="btnxemthongke"><strong>Quay về</strong></button>
+												<button class="btn btn-primary" type="submit" class="btnxemthongke"><strong>Tiếp tục</strong></button>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</legend>
+
+	<!--footer-->     
+
+	<footer class="footer-site" >
+		<div class="row" style="text-align: center;">
+			<span>Copyright © 2016 TVT</span>
+		</div>
+	</footer>
+
+</body>
+</html>
+
+	<!--div class="sketchfab-embed-wrapper">
+	  <iframe width="640" height="480" 
+	  src="https://sketchfab.com/models/20670a1d13e449748b385e99400eda12/embed" 
+	  frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" 
+	  onmousewheel="">
+	  </iframe>
+	  </div-->
