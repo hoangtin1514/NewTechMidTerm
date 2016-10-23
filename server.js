@@ -48,6 +48,7 @@ app.use('/', require('./routes'));
 app.use('/', require('./routes/register'));
 app.use('/', require('./routes/login'));
 app.use('/', require('./routes/San_Bay'));
+app.use('/', require('./routes/Chuyen_Bay'));
 
 //===============PORT=================
 app.listen(process.env.PORT || 3000, function() {
