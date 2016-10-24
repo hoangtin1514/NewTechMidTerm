@@ -76,6 +76,43 @@
 
     Event.observe(window, 'load', function() { setupCalendars() })
 </script><!--// add calendar-->
+
+<script>
+
+		if (window.XMLHttpRequest)
+		            {
+		                // code for IE7+, Firefox, Chrome, Opera, Safari
+		                xmlhttp=new XMLHttpRequest();
+		            } else {
+		                // code for IE6, IE5
+		                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		            }
+
+		    xmlhttp.onreadystatechange=function() {
+		    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		        myFunction(xmlhttp.responseText);
+		    }
+		}
+		xmlhttp.open("GET", 'http://localhost:3000/api/v1/Quoc_Gia', true);
+		xmlhttp.send();
+
+function myFunction(response) {
+    var arr = JSON.parse(response);
+    var i;  
+    var out = "";
+    console.log(arr);
+    for(i = 0; i < arr.length; i++)
+         {
+             out += "<optgroup label= '" + arr[i].ChauLuc.TenCL + "'>";
+             for(j = 0; j < arr[i].ChauLuc.QuocGia.length; j++)
+             {
+            	 out += "<option value = '" + arr[i].ChauLuc.QuocGia[j].MaQG + "'>" + arr[i].ChauLuc.QuocGia[j].TenQG + "</option>"; 
+            }
+            out += "</optgroup>";
+          }
+    document.getElementById("frm_timve_QG").innerHTML = out;
+}
+</script>
 </head>
 
 <body>
