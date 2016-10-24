@@ -70,7 +70,7 @@ app.use('/', require('./routes/San_Bay'));
 app.use('/', require('./routes/Chuyen_Bay'));
 app.use('/', require('./routes/QuocGia'));
 app.use('/', require('./routes/Tinh'));
-
+app.use('/', require('./routes/KhachHang'));
 //===============PORT=================
 app.listen(process.env.PORT || 3000, function() {
     console.log('now listening on http://localhost:3000');

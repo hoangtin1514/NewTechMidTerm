@@ -77,6 +77,7 @@
     Event.observe(window, 'load', function() { setupCalendars() })
 </script><!--// add calendar-->
 
+<!-- get quoc gia--> 
 <script>
 
 		if (window.XMLHttpRequest)
@@ -100,17 +101,54 @@ function myFunction(response) {
     var arr = JSON.parse(response);
     var i;  
     var out = "";
-    console.log(arr);
+    out += "<option/>"; 
     for(i = 0; i < arr.length; i++)
          {
-             out += "<optgroup label= '" + arr[i].ChauLuc.TenCL + "'>";
              for(j = 0; j < arr[i].ChauLuc.QuocGia.length; j++)
              {
             	 out += "<option value = '" + arr[i].ChauLuc.QuocGia[j].MaQG + "'>" + arr[i].ChauLuc.QuocGia[j].TenQG + "</option>"; 
             }
-            out += "</optgroup>";
           }
-    document.getElementById("frm_timve_QG").innerHTML = out;
+    document.getElementById("frm_timve_quocGia").innerHTML = out;
+    document.getElementById("frm_timve_quocTich").innerHTML = out;
+    document.getElementById("frm_timve_hoChieu").innerHTML = out;
+}
+</script>
+
+<!-- get tinh--> 
+<script>
+function getTinh(maQg)
+{
+		if (window.XMLHttpRequest)
+		            {
+		                // code for IE7+, Firefox, Chrome, Opera, Safari
+		                xmlhttp=new XMLHttpRequest();
+		            } else {
+		                // code for IE6, IE5
+		                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+		            }
+
+		    xmlhttp.onreadystatechange=function() {
+		    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		        myFunctionChangre(xmlhttp.responseText);
+		    }
+		}
+		xmlhttp.open("GET", 'http://localhost:3000/api/v1/Tinh/?MaQG=' + maQg, true);
+		xmlhttp.send();
+	}
+
+function myFunctionChangre(response) {
+    var arr = JSON.parse(response);
+    var i;  
+    var out = "";
+    for(i = 0; i < arr.length; i++)
+         {
+             for(j = 0; j < arr[i].Tinh.length; j++)
+             {
+            	 out += "<option value = '" + arr[i].Tinh[j].MaTinh + "'>" + arr[i].Tinh[j].TenTinh + "</option>"; 
+            }
+          }
+    document.getElementById("frm_timve_tinh").innerHTML = out;
 }
 </script>
 </head>
@@ -145,7 +183,7 @@ function myFunction(response) {
 							<h3>Các trường thông tin có dấu * là bắt buộc</h3>
 						</div>
 						<div class="panel-body" style="background:#ffffcc">
-							<form id="timve" name="timve" method="get" action="#">
+							<form id="timve" name="timve" method="post" action="http://localhost:3000/api/v1/Khach_Hang">
 								<table align="center" width="100%">
 									<tbody>
 
@@ -155,10 +193,8 @@ function myFunction(response) {
 											</td>
 											<td align="left" nowrap="nowrap">
 												<select name="quyDanh" id="frm_timve_quyDanh" style="width:200px;">
-													<option value="">a</option>
-													<option value="">b</option>
-													<option value="">c</option>
-													<option value="">d</option>
+													<option value="Mr">Mr</option>
+													<option value="Ms">Ms</option>
 												</select>
 											</td>
 										</tr>
@@ -206,7 +242,7 @@ function myFunction(response) {
 												Quốc gia*:
 											</td>
 											<td align="left" nowrap="nowrap">
-												<select name="quocGia" id="frm_timve_quocGia" style="width:200px;">
+												<select name="quocGia" id="frm_timve_quocGia"  onchange="getTinh(this.value)" style="width:200px;">
 													
 												</select>
 											</td>
@@ -215,10 +251,7 @@ function myFunction(response) {
 												Tỉnh/Tiểu ban*:
 											</td>
 											<td align="left" nowrap="nowrap">
-												<select name="tinh" id="frm_timve_tinh" style="width:200px;">
-													<option value="">HCM</option>
-													<option value="">Vũng Tàu</option>
-													<option value="">Bình Thuận</option>
+												<select name="tinh" id="frm_timve_tinh" style="width:200px;">													
 												</select>
 											</td>
 										</tr>
@@ -263,18 +296,18 @@ function myFunction(response) {
 										<tr>
 
 											<td align="left" nowrap="nowrap">
-												Số hộ khẩu:
+												Số hộ chiếu:
 											</td>
 											<td align="left" nowrap="nowrap">
-												<input name="soHoKhau" type="text" id="frm_timve_soHoKhau" style="width:200px;" value="">
+												<input name="soHoChieu" type="text" id="frm_timve_soHoChieu" style="width:200px;" value="">
 
 											</td>
 
 											<td align="left" nowrap="nowrap">
-												Ngày hết hạn hộ khẩu:
+												Ngày hết hạn hộ chiếu:
 											</td>
 											<td align="left" nowrap="nowrap">
-												<input name="ngayHetHanHoKhau" type="date" id="frm_timve_ngayHetHanHoKhau" style="width:200px;" value="">
+												<input name="ngayHetHanHoChieu" type="date" id="frm_timve_ngayHetHanHoChieu" style="width:200px;" value="">
 
 											</td>
 										</tr>
@@ -292,10 +325,6 @@ function myFunction(response) {
 											</td>
 											<td align="left" nowrap="nowrap">
 												<select name="quocTich" id="frm_timve_quocTich" style="width:200px;">
-													<option value="">Việt Nam</option>
-													<option value="">Lào</option>
-													<option value="">CamPuChia</option>
-													<option value="">Thái Lan</option>
 												</select>
 											</td>
 										</tr>
@@ -307,6 +336,7 @@ function myFunction(response) {
 										</tr>
 									</tbody>
 								</table>
+								<button type="submit">aaa</button>
 							</form>
 						</div>
 					</div>
