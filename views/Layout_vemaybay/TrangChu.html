@@ -2,12 +2,6 @@
 	<html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<!--meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags >
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="icon" href="../../favicon.ico"-->
 
 		<title>Vé Máy Bay</title>
 
@@ -21,61 +15,7 @@
 
 		
 
-		<!-- add calendar-->
-		<link rel="stylesheet" type="text/css" href="public/stylesheets/calendarview.css">
-		<style>
-			body {
-				font-family: Trebuchet MS;
-			}
-			div.calendar {
-				max-width: 240px;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			div.calendar table {
-				width: 100%;
-			}
-			div.dateField {
-				width: 140px;
-				padding: 6px;
-				-webkit-border-radius: 6px;
-				-moz-border-radius: 6px;
-				color: #555;
-				background-color: white;
-				margin-left: auto;
-				margin-right: auto;
-				text-align: center;
-			}
-			div#popupDateField:hover {
-				background-color: #cde;
-				cursor: pointer;
-			}
-		</style>
-
-		<script src="public\javascripts\prototype.js"></script>
-		<script src="public\javascripts\calendarview.js"></script>
-
-		<script>
-			function setupCalendars() {
-        // Embedded Calendar
-        Calendar.setup(
-        {
-        	dateField: 'embeddedDateField',
-        	parentElement: 'embeddedCalendar'
-        }
-        )
-
-        // Popup Calendar
-        Calendar.setup(
-        {
-        	dateField: 'popupDateField',
-        	triggerElement: 'popupDateField'
-        }
-        )
-    }
-
-    Event.observe(window, 'load', function() { setupCalendars() })
-</script><!--// add calendar-->
+		
 </head>
 
 <body>
@@ -212,31 +152,31 @@
 						<table class="table table-bordered table-responsive table-hover table-condensed">
 							<thead style="background:#ffa64d">
 								<tr>
-									<th class="table_kq1"><strong>Ngay bay</strong></th>
-									<th class="table_kq1"><strong>Khởi hành</strong></th>
-									<th class="table_kq1"><strong>Đến</strong></th>
-									<th class="table_kq1"><strong>Chuyến bay</strong></th>
-									<th class="table_kq1"><strong>Promo</strong></th>
-									<th class="table_kq1"><strong>Eco</strong></th>
-									<th class="table_kq1"><strong>Skyboss</strong></th>
+									<th><strong>Ngay bay</strong></th>
+									<th><strong>Khởi hành</strong></th>
+									<th><strong>Đến</strong></th>
+									<th><strong>Chuyến bay</strong></th>
+									<th><strong>Promo</strong></th>
+									<th><strong>Eco</strong></th>
+									<th><strong>Skyboss</strong></th>
 								</tr>
 							</thead>
-							<tbody style="background:#ffffcc">
+							<tbody id="chuyenBay" style="background:#ffffcc">
 								<tr>
 									<td><strong>17/10/2016</strong></td>
 									<td>08:00 UIH Quy Nhon</td>
 									<td>09:00 SGN Ho Chi Minh</td>
 									<td>V3381 1h10m</td>
 									<td><strong>Hết vé</strong></td>
-									<td><input id='ve' type='radio' name='ve' value='600,000'/>600,000 VND</td>
-									<td><input id='ve' type='radio' name='ve' value='2,250,000'/>2,250,000 VND</td>
+									<td><input id='ve1' type='radio' name='ve1' value=''/>/td>
+									<td><input id='ve2' type='radio' name='ve2' value=''/></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
 					<div align="right">
-						<button align="right" class="btn btn-primary" type="button" class="btnxemthongke"><strong>Quay về</strong></button>
-						<button align="right" class="btn btn-primary" type="button" class="btnxemthongke"><strong>Tiếp tục</strong></button>
+						<button name="quayVe" id="quayVe" align="right" class="btn btn-primary" type="button" class="btnxemthongke"><strong>Quay về</strong></button>
+						<button name="tiepTuc" id="tiepTuc" align="right" class="btn btn-primary" type="button" class="btnxemthongke"><strong>Tiếp tục</strong></button>
 					</div>
 				</div>
 			</div>
