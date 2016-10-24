@@ -2,12 +2,7 @@
 	<html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<!--meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags >
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="icon" href="../../favicon.ico"-->
+		
 
 		<title>Vé Máy Bay</title>
 
@@ -56,6 +51,7 @@ function myFunction(response) {
     document.getElementById("frm_timve_quocTich").innerHTML = out;
     document.getElementById("frm_timve_hoChieu").innerHTML = out;
 }
+
 </script>
 
 <!-- get tinh--> 
@@ -93,7 +89,60 @@ function myFunctionChangre(response) {
           }
     document.getElementById("frm_timve_tinh").innerHTML = out;
 }
+
+
 </script>
+
+<script>
+	function ValidationEvent() {
+// Storing Field Values In Variables
+var quyDanhs = document.getElementById("frm_timve_quyDanh");
+var quyDanh = quyDanhs.options[quyDanhs.selectedIndex].value;
+
+var ho = document.getElementById("frm_timve_ho").value;
+var ten = document.getElementById("frm_timve_ten").value;
+
+var diaChi = document.getElementById("frm_timve_diaChi").value;
+var thanhPho = document.getElementById("frm_timve_thanhPho").value;
+//var quocGia = document.getElementById("frm_timve_quocGia").value;
+var quocGias = document.getElementById("frm_timve_quocGia");
+var quocGia = quocGias.options[quocGias.selectedIndex].value;
+
+var tinhs = document.getElementById("frm_timve_tinh");
+var tinh = tinhs.options[tinhs.selectedIndex].value;
+
+var sdtdd = document.getElementById("frm_timve_sdtdd").value;
+// Regular Expression For Email
+
+if (quyDanh == null || quyDanh == "") {
+        alert(quyDanh + "quyDanh must be filled out");
+        return false;
+} if(ho == null || ho == ""){
+	alert("ho must be filled out");
+        return false;
+} if(ten == null || ten == ""){
+	alert("ten must be filled out");
+        return false;
+} if(diaChi == null || diaChi == ""){
+	alert("diaChi must be filled out");
+        return false;
+} if(thanhPho == null || thanhPho == ""){
+	alert("thanhPho must be filled out");
+        return false;
+} if(quocGia == null || quocGia == ""){
+	alert("quocGias must be filled out");
+        return false;
+} if(tinh == null || tinh == ""){
+	alert("tinh must be filled out");
+        return false;
+} if(sdtdd == null || sdtdd == ""){
+	alert("sdtdd must be filled out");
+        return false;
+}
+
+}
+</script>
+
 </head>
 
 <body>
@@ -126,7 +175,7 @@ function myFunctionChangre(response) {
 							<h3>Các trường thông tin có dấu * là bắt buộc</h3>
 						</div>
 						<div class="panel-body" style="background:#ffffcc">
-							<form id="timve" name="timve" method="post" action="http://localhost:3000/api/v1/Khach_Hang">
+							<form onsubmit="return ValidationEvent()" id="timve" name="timve" method="post" action="http://localhost:3000/api/v1/Khach_Hang">
 								<table align="center" width="100%">
 									<tbody>
 
@@ -136,7 +185,7 @@ function myFunctionChangre(response) {
 											</td>
 											<td align="left" nowrap="nowrap">
 												<select name="quyDanh" id="frm_timve_quyDanh" style="width:200px;">
-													<option value="Mr">Mr</option>
+													<option selected="selected" value="Mr">Mr</option>
 													<option value="Ms">Ms</option>
 												</select>
 											</td>
@@ -279,7 +328,7 @@ function myFunctionChangre(response) {
 										</tr>
 									</tbody>
 								</table>
-								<button type="submit">aaa</button>
+								<!--button type="submit">aaa</button-->
 							</form>
 						</div>
 					</div>

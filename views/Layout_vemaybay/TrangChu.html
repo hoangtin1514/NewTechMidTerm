@@ -15,7 +15,40 @@
 
 		
 
-		
+		<script>
+
+		    function ValidationEvents() {
+				// Storing Field Values In Variables
+				
+				var nguoiLons = document.getElementById("frm_timve_nguoilon");
+				var nguoiLon = nguoiLons.options[nguoiLons.selectedIndex].value;
+
+				var treems = document.getElementById("frm_timve_treem");
+				var treem = treems.options[treems.selectedIndex].value;
+
+				var embes = document.getElementById("frm_timve_embe");
+				var embe = embes.options[embes.selectedIndex].value;
+				// Regular Expression For Email
+
+				var a = parseInt(treem) + parseInt(embe);
+				var b = parseInt(nguoiLon) + a;
+				
+				
+				if((parseInt(nguoiLon) < (parseInt(treem) + parseInt(embe))) && b > 10){
+					alert("số người lớn phải lớn hơn trẻ em và tổng số người không quá 10");
+					return false;
+				}
+				if(parseInt(nguoiLon) < (parseInt(treem) + parseInt(embe))){
+					alert("số người lớn phải lớn hơn trẻ em");
+					return false;
+				}
+				
+				if (b > 10) {
+					alert("tổng số người không quá 10");
+					return false;
+				}
+			}
+			</script>
 </head>
 
 <body>
@@ -47,7 +80,7 @@
 					<div class="panel" style="background:#ffa64d">
 						<div class="panel-heading" style="height:45px; text-align:center"><h3 style="font-size:30px;margin-top: 0px"><strong>Tìm vé</strong></h3></div>
 						<div class="panel-body" style="background:#ffffcc">
-							<form id="timve" name="timve" method="get" action="#">
+							<form onsubmit="return ValidationEvents()" id="timve" name="timve" method="get" action="#">
 								<table align="center" width="100%">
 									<tbody>
 
@@ -95,12 +128,16 @@
 											</td>
 											<td class="padding_" align="left" nowrap="nowrap">
 												<select name="nguoilon" id="frm_timve_nguoilon" style="width:140px;">
-													<option value="">1</option>
-													<option value="">2</option>
-													<option value="">3</option>
-													<option value="">4</option>
-													<option value="">5</option>
-													<option value="">6</option>
+													<option selected="selected" value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
 												</select>
 											</td>
 										</tr>
@@ -110,13 +147,17 @@
 											</td>
 											<td class="padding_" align="left" nowrap="nowrap">
 												<select name="treem" id="frm_timve_treem" style="width:140px;">
-													<option value="">0</option>
-													<option value="">1</option>
-													<option value="">2</option>
-													<option value="">3</option>
-													<option value="">4</option>
-													<option value="">5</option>
-													<option value="">6</option>
+													<option selected="selected" value="0">0</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
 												</select>
 											</td>
 										</tr>
@@ -126,13 +167,17 @@
 											</td>
 											<td class="padding_" align="left" nowrap="nowrap">
 												<select name="embe" id="frm_timve_embe" style="width:140px;">
-													<option value="">0</option>
-													<option value="">1</option>
-													<option value="">2</option>
-													<option value="">3</option>
-													<option value="">4</option>
-													<option value="">5</option>
-													<option value="">6</option>
+													<option selected="selected" value="0">0</option>
+													<option value="1">1</option>
+													<option value="2">2</option>
+													<option value="3">3</option>
+													<option value="4">4</option>
+													<option value="5">5</option>
+													<option value="6">6</option>
+													<option value="7">7</option>
+													<option value="8">8</option>
+													<option value="9">9</option>
+													<option value="10">10</option>
 												</select>
 											</td>
 										</tr>
