@@ -2,13 +2,7 @@
 	<html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<!--meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags >
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="icon" href="../../favicon.ico"-->
-
+		
 		<title>Vé Máy Bay</title>
 
 		<!-- Bootstrap core CSS -->
@@ -20,62 +14,6 @@
 		<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 
 		
-
-		<!-- add calendar-->
-		<link rel="stylesheet" type="text/css" href="public/stylesheets/calendarview.css">
-		<style>
-			body {
-				font-family: Trebuchet MS;
-			}
-			div.calendar {
-				max-width: 240px;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			div.calendar table {
-				width: 100%;
-			}
-			div.dateField {
-				width: 140px;
-				padding: 6px;
-				-webkit-border-radius: 6px;
-				-moz-border-radius: 6px;
-				color: #555;
-				background-color: white;
-				margin-left: auto;
-				margin-right: auto;
-				text-align: center;
-			}
-			div#popupDateField:hover {
-				background-color: #cde;
-				cursor: pointer;
-			}
-		</style>
-
-		<script src="public\javascripts\prototype.js"></script>
-		<script src="public\javascripts\calendarview.js"></script>
-
-		<script>
-			function setupCalendars() {
-        // Embedded Calendar
-        Calendar.setup(
-        {
-        	dateField: 'embeddedDateField',
-        	parentElement: 'embeddedCalendar'
-        }
-        )
-
-        // Popup Calendar
-        Calendar.setup(
-        {
-        	dateField: 'popupDateField',
-        	triggerElement: 'popupDateField'
-        }
-        )
-    }
-
-    Event.observe(window, 'load', function() { setupCalendars() })
-</script><!--// add calendar-->
 </head>
 
 <body>
@@ -103,18 +41,18 @@
 
 				<div class="col-md-12">
 				<h3>Lịch sử mua vé</h3>
-					<div class="table_kq" style="text-align: center; font-size: 13px">
+					<div style="text-align: center; font-size: 13px">
 						<table class="table table-bordered table-responsive table-hover table-condensed">
 							<thead style="background:#ffa64d">
 								<tr>
-									<th class="table_kq1"><strong>Mã vé</strong></th>
-									<th class="table_kq1"><strong>Ngày mua</strong></th>
-									<th class="table_kq1"><strong>Trạng thái</strong></th>
-									<th class="table_kq1"><strong>Giá tiền</strong></th>
-									<th class="table_kq1"><strong>Chi tiết</strong></th>
+									<th><strong>Mã vé</strong></th>
+									<th><strong>Ngày mua</strong></th>
+									<th><strong>Trạng thái</strong></th>
+									<th><strong>Giá tiền</strong></th>
+									<th><strong>Chi tiết</strong></th>
 								</tr>
 							</thead>
-							<tbody style="background:#ffffcc">
+							<tbody id="lichSuMuaVe" style="background:#ffffcc">
 								<tr>
 									<td><strong>VCL</strong></td>
 									<td>17/10/2016</td>
