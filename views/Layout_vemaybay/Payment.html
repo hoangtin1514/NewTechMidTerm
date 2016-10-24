@@ -2,13 +2,7 @@
 	<html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<!--meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags >
-		<meta name="description" content="">
-		<meta name="author" content="">
-		<link rel="icon" href="../../favicon.ico"-->
-
+		
 		<title>Vé Máy Bay</title>
 
 		<!-- Bootstrap core CSS -->
@@ -21,61 +15,7 @@
 
 		
 
-		<!-- add calendar-->
-		<link rel="stylesheet" type="text/css" href="public/stylesheets/calendarview.css">
-		<style>
-			body {
-				font-family: Trebuchet MS;
-			}
-			div.calendar {
-				max-width: 240px;
-				margin-left: auto;
-				margin-right: auto;
-			}
-			div.calendar table {
-				width: 100%;
-			}
-			div.dateField {
-				width: 140px;
-				padding: 6px;
-				-webkit-border-radius: 6px;
-				-moz-border-radius: 6px;
-				color: #555;
-				background-color: white;
-				margin-left: auto;
-				margin-right: auto;
-				text-align: center;
-			}
-			div#popupDateField:hover {
-				background-color: #cde;
-				cursor: pointer;
-			}
-		</style>
-
-		<script src="public\javascripts\prototype.js"></script>
-		<script src="public\javascripts\calendarview.js"></script>
-
-		<script>
-			function setupCalendars() {
-        // Embedded Calendar
-        Calendar.setup(
-        {
-        	dateField: 'embeddedDateField',
-        	parentElement: 'embeddedCalendar'
-        }
-        )
-
-        // Popup Calendar
-        Calendar.setup(
-        {
-        	dateField: 'popupDateField',
-        	triggerElement: 'popupDateField'
-        }
-        )
-    }
-
-    Event.observe(window, 'load', function() { setupCalendars() })
-</script><!--// add calendar-->
+		
 </head>
 
 <body>
@@ -108,24 +48,17 @@
 					</div>
 					<div style="padding-left: 40px">
 					<h3>Hình thức thanh toán</h3>
-						<div>
-							<input id='ve' type='radio' name='ve' value='600,000'/> <img src="public\img\logo3.jpg">
-							<input id='ve' type='radio' name='ve' value='600,000'/> <img src="public\img\logo2.jpg">
-							<input id='ve' type='radio' name='ve' value='600,000'/> <img src="public\img\logo3.jpg">
-							<input id='ve' type='radio' name='ve' value='600,000'/> <img src="public\img\logo3.jpg">
-							<input id='ve' type='radio' name='ve' value='600,000'/> <img src="public\img\logo2.jpg">
-						</div>
-					</div>
-					<div style="padding-left: 40px; padding-right: 40px">
-						<div>
-							<input id='ve' type='radio' name='ve' value='600,000'/> <img src="public\img\logo3.jpg">
-							<input id='ve' type='radio' name='ve' value='600,000'/> <img src="public\img\logo2.jpg">
-							<input id='ve' type='radio' name='ve' value='600,000'/> <img src="public\img\logo3.jpg">
+						<div id="thanhToan">
+							<input id='nganHang1' type='radio' name='ve' value=''/> <img src="public\img\logo3.jpg">
+							<input id='nganHang2' type='radio' name='ve' value=''/> <img src="public\img\logo2.jpg">
+							<input id='nganHang3' type='radio' name='ve' value=''/> <img src="public\img\logo3.jpg">
+							<input id='nganHang4' type='radio' name='ve' value=''/> <img src="public\img\logo3.jpg">
+							<input id='nganHang5' type='radio' name='ve' value=''/> <img src="public\img\logo2.jpg">
 						</div>
 					</div>
 					<div align="right">
-						<button class="btn btn-primary" type="button"><strong>Quay về</strong></button>
-						<button class="btn btn-primary" type="button"><strong>Tiếp tục</strong></button>
+						<button name="quayVe" id="quayVe" class="btn btn-primary" type="button"><strong>Quay về</strong></button>
+						<button name="tiepTuc" id="tiepTuc" class="btn btn-primary" type="button"><strong>Tiếp tục</strong></button>
 					</div>
 				</div>
 			</div>
@@ -135,7 +68,7 @@
 	<!--footer-->     
 
 	<footer class="footer-site" >
-		<div class="row" style="text-align: center;">
+		<div class="row" style="text-align: center; padding-top: 30px;">
 			<span>Copyright © 2016 TVT</span>
 		</div>
 	</footer>
