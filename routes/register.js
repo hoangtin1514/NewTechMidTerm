@@ -22,16 +22,21 @@ router.post('/api/v1/Dang_Ky', function(req, res) {
                     'password': req.body.password,
                     'type': 'User'
                 }, function(err, insertedDoc) {
-                    if (insertedDoc != null) {
-                        passport.authenticate('local')(req, res, function() {
-                            var resUser = {
-                              Username : req.user.name,
-                              Email:req.user.email
-                            };
-                            res.status(201).send(resUser);
-                            console.log("Success");
-                        });
+                    if (err){
+                      res.status(500).send("Something went wrong!");
                     }
+                    else{
+                      if (insertedDoc != null) {
+                          passport.authenticate('local')(req, res, function() {
+                              var resUser = {
+                                Username : req.user.name,
+                                Email:req.user.email
+                              };
+                              res.status(201).send(resUser);
+                              console.log("Success");
+                          });
+                      }
+                  }
                 });
             } else {
                 res.status(400).send("Name or password is empty");

@@ -2,11 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req, res) {
-    if (req.user === null || req.user === undefined) {
-        res.redirect('/login');
-    } else {
-        res.redirect('/SomeInterestingPage');
-    }
+  res.send("Server is running");
 });
 
 module.exports = router;
