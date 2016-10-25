@@ -8,16 +8,17 @@ router.post('/api/v1/Dat_ve', function(req, res) {
         	"maCb" : req.param('maCb'),
         	"SLVeThuong" : req.param('SLVeThuong'),
         	"SLVeVip" : req.param('SLVeVip'),
-        	"TongTien" : req.param('TongTien')
+        	"TongTien" : req.param('TongTien'),
+          "EmailUser" : req.param('email')
 
-   		 }, function (err, result){    
+   		 }, function (err, result){
             if(err){
-                res.send(500, "error");                 
+                res.send(500, "error");
             } else {
-                console.log(result);        
+                console.log(result);
                 res.status(200).send("success");
             }
-            
+
         });
 });
 
