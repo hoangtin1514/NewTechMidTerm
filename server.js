@@ -72,6 +72,9 @@ app.use('/', require('./routes/QuocGia'));
 app.use('/', require('./routes/Tinh'));
 app.use('/', require('./routes/KhachHang'));
 app.use('/', require('./routes/DatVe'));
+app.use('/', require('./routes/LichSu'));
+
+
 //===============PORT=================
 app.listen(process.env.PORT || 3000, function() {
     console.log('now listening on http://localhost:3000');
