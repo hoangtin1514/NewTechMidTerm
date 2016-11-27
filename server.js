@@ -109,6 +109,54 @@ passport.use(new LocalStrategy({
         });
     }));
 
+    //Login: Facebook
+    passport.use(new FacebookStrategy({
+            clientID: '774277726045742',
+            clientSecret: '79176e8df634987b5ccf6443cbe6386d',
+            callbackURL: "http://localhost:3000/auth/facebook/callback",
+            profileFields: ['id', 'displayName', 'email'],
+            session: false
+        },
+        function(accessToken, refreshToken, profile, cb) {
+            var users = db.get('users');
+            users.findOne({
+                email: profile.emails[0].value
+            }, function(err, user) {
+
+                if (err) {
+                    return cb(err);
+                    console.log("Khong ket noi CSDL");
+                }
+
+                if (!user) {
+                    // Tao user moi
+                    var newUser = profile._json;
+                    users.insert({
+                        'name': newUser.name,
+                        'email': newUser.email,
+                        'type': 'User'
+                    }, function(err, insertedDoc) {
+
+                    });
+
+                    var new_user = {
+                        name: newUser.name,
+                        email: newUser.email,
+                        type: 'User'
+                    }
+
+                    console.log(new_user);
+
+                    console.log("return new_user");
+
+                    return cb(null, new_user);
+                }
+                console.log("return user");
+                return cb(null, user);
+            });
+        }
+    ));
+
 passport.serializeUser(function(user, cb) {
     console.log("bat dau serializeUser");
     console.log("user email = " + user.email);
